@@ -1,0 +1,131 @@
+﻿@model PagedList.IPagedList<Model.EF.User>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Danh sách người dùng
+}
+<section class="content">
+ 
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title" style="margin-top: 10px;"> Danh sách người dùng</h3>
+            <div class="col-md-offset- col-md-10" style=" display: flex; justify-content: flex-end;">
+                <a  href="@Url.Action("Create","User")">
+
+                <input type="submit" value="Create" class="btn btn-default" style=" color : #333; font-weight:800; padding : 8px; background-color: #4fb2fb; border: 1px solid #958f8f; " />
+                </a>
+            </div>
+
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th style="width: 1%">
+                            #
+                        </th>
+                        <th style="width: 20%">
+                            Tài khoản
+                        </th>
+                        <th style="width: 20%">
+                            Tên
+                        </th>
+                        <th>
+                            Ảnh
+                        </th>
+                        <th style="width: 20%" class="text-center">
+                            Status
+                        </th>
+
+
+                    </tr>
+                    
+                </thead>
+               
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                #
+                            </td>
+                            <td>
+                                <a>
+                                    @item.UserName
+                                </a>
+
+                            </td>
+                            <td>
+                                <a>
+                                    @item.Name
+                                </a>
+
+                            </td>
+                            <td>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <img alt="Avatar" class="table-avatar" src="~/assets/admin/dist/img/avatar.png">
+                                    </li>
+
+                                </ul>
+                            </td>
+                            <td class="project_progress">
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
+                                    </div>
+                                </div>
+                                <small>
+                                    57% Complete
+                                </small>
+                            </td>
+                            <td class="project-state">
+                                <span class="badge badge-success">Success</span>
+                            </td>
+                            <td class="project-actions text-right">
+                                
+                                <a class="btn btn-info btn-sm" href="/Admin/User/Edit/@item.ID" >
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </a>
+                                <div class="btn btn-info btn-sm " style=" background-color: #fdb004; border: none; color: #428bde;">
+
+                                   <i class="fas fa-trash " style=" color :#FFF"></i>
+                                   
+                                   
+
+                                       @Ajax.ActionLink("Delete", "Delete", new { @id = item.ID }, new AjaxOptions
+                                 {
+                                     Confirm = "Bạn có muốn xóa bản ghi này ?",
+                                     OnComplete = " $('row_" + item.ID + "').remove()",
+                                     HttpMethod = "Delete",
+
+
+
+                                 })
+                                 
+                                  
+                                   
+                                   
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            @Html.PagedListPager(Model, page => Url.Action("Index",new {page}))
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->
