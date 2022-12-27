@@ -7,6 +7,7 @@
     <link href="~/Content/PagedList.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/assets/admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -19,12 +20,19 @@
     <link rel="stylesheet" href="~/assets/admin/plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/assets/admin/dist/css/adminlte.min.css">
+
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="~/assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
     <!-- Daterange picker -->
     <link rel="stylesheet" href="~/assets/admin/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="~/assets/admin/plugins/summernote/summernote-bs4.min.css">
+
+    1
+    <link href="~/assets/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+
 </head>
 <body class="sidebar-mini layout-fixed" style="height: auto;">
     <div class="wrapper">
@@ -190,56 +198,64 @@
                             <nav class="mt-2">
                                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                                     <!-- Add icons to the links using the .nav-icon class
-                                with font-awesome or any other icon font library -->
-                                    <li class="nav-item menu-open">
-                                        <a href="/Admin" class="nav-link ">
+    with font-awesome or any other icon font library -->
+                                    <li class="nav-item menu-open" style="margin-top: 24px;">
+                                        <a href="/Admin" class="nav-link " style="font-size: 18px;">
                                             <i class="nav-icon fas fa-tachometer-alt"></i>
                                             <p>
-                                                Dashboard
-
+                                                Thống Kê Doanh Số
                                             </p>
                                         </a>
 
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="/Admin/Home/Tables" class="nav-link">
-                                            <i class="nav-icon fas fa-table"></i>
+                                    <li class="nav-item" style="margin-top: 24px;">
+                                        <a href="/Admin/User/Index" class="nav-link" style="font-size: 18px;">
+                                            <i class=" nav-icon fas fa-address-card"></i>
                                             <p>
-                                                Tables
+                                                Quản Lý Nhân Viên
                                             </p>
                                         </a>
 
                                     </li>
-                                  
-                               
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="@Url.Action("Index","User")">
-                                            <i class="nav-icon fas fa-book"></i>
+                                    <li class="nav-item" style="margin-top: 24px;">
+                                        <a href="/Admin/Home/Tables" class="nav-link" style="font-size: 18px;">
+                                            <i class="nav-icon fas fa-light fa-user-astronaut"></i>
+
                                             <p>
-                                                Prolife
-                                                <i class="fas fa-angle-left right"></i>
-
+                                                Quản Lý Khách Hàng
                                             </p>
                                         </a>
-                                        <ul class="nav nav-treeview">
-                                            <li class="nav-item">
-                                                <a href="@Url.Action("Index","User")" class="nav-link ">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>Prolife View</p>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="@Url.Action("Create","User")" class="nav-link ">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>Prolife Add</p>
-                                                </a>
-                                            </li>
-                                           
 
-
-                                        </ul>
                                     </li>
+                                    <li class="nav-item" style="margin-top: 24px;">
+                                        <a href="/Admin/Home/Tables" class="nav-link" style="font-size: 18px;">
+                                            <i class="nav-icon fas fa-solid fa-tag"></i>
+                                            <p>
+                                                Quản Lý Sản Phẩm
+                                            </p>
+                                        </a>
 
+                                    </li>
+                                    <li class="nav-item" style="margin-top: 24px;">
+                                        <a href="/Admin/Home/Tables" class="nav-link" style="font-size: 18px;">
+                                            <i class=" nav-icon fas fa-truck-moving"></i>
+                                            <p>
+                                                Quản Lý Đơn Hàng
+                                            </p>
+                                        </a>
+
+                                    </li>
+                                    
+                                    <li class="nav-item" style="margin-top: 24px;">
+                                        <a href="/Admin/Home/Tables" class="nav-link" style="font-size: 18px;">
+                                            <i class=" nav-icon fas fa-sharp fa-solid fa-wrench"></i> 
+                                            <p>
+
+                                                Cài Đặt Hệ Thống
+                                            </p>
+                                        </a>s
+
+                                    </li>
                                 </ul>
 
                             </nav>
@@ -373,6 +389,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="~/assets/admin/dist/js/pages/dashboard.js"></script>
     <script src="~/assets/admin/plugins/jquery-uno1/jquery.unobtrusive-ajax.min.js"></script>
+    @RenderSection("scripts", required : false)
 
 </body>
 </html>
