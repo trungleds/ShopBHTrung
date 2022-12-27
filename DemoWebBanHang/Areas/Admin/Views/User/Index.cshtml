@@ -8,9 +8,12 @@
 @section header{
     Danh sách người dùng
 }
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 
-<section class="content">
+<section class="content p-4">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title " style=" margin-top: 9px; font-size: 20px;">Danh sách người dùng</h3>
@@ -20,6 +23,25 @@
 
             </div>
         </div>
+
+        @using (Html.BeginForm("Index", "User", FormMethod.Get))
+            {
+
+            <div class="input-group m-3">
+                <input type="search" class="form-control form-control-lg col-md-4"
+                       placeholder="Type your keywords here" 
+                       name="searchString" 
+                        value="@ViewBag.SearchString">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-lg btn-default">
+                        <i class="fa fa-search "></i>
+
+                        <i class="fa fa-sign-in"></i>
+                    </button>
+                </div>
+            </div>
+            }
+     
 
         <div class="card-body p-0">
             <table class="table table-striped projects">
@@ -36,6 +58,10 @@
                         </th>
                         <th>
                             Project Progress
+                        </th>
+                        <th>
+                        </th>
+                        <th>
                         </th>
 
 
@@ -75,11 +101,11 @@
                             </td>
                             <td class="project-actions text-right">
 
-                                @* <a class="btn btn-info btn-sm" href="/Admin/User/Edit/@item.ID">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>*@
+                                <a class="btn btn-info btn-sm" href="/Admin/User/Edit/@item.ID">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </a>
                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModal">Edit </button>
                                 <div class="btn btn-info btn-sm " style=" background-color: #fdb004; border: none; color: #428bde;">
 
@@ -88,14 +114,14 @@
 
 
                                     @Ajax.ActionLink("Delete", "Delete", new { @id = item.ID }, new AjaxOptions
-                                    {
-                                        Confirm = "Bạn có muốn xóa bản ghi này ?",
-                                        OnComplete = " $('row_" + item.ID + "').remove()",
-                                        HttpMethod = "Delete",
+                               {
+                                   Confirm = "Bạn có muốn xóa bản ghi này ?",
+                                   OnComplete = " $('row_" + item.ID + "').remove()",
+                                   HttpMethod = "Delete",
 
 
 
-                                    })
+                               })
 
 
 
@@ -104,11 +130,14 @@
 
                             </td>
                         </tr>
-                    }
+                        }
 
                 </tbody>
             </table>
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            <div class="m-3">
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page , @ViewBag.SearchString }))
+            </div>
         </div>
         <!-- /.card-body -->
     </div>
@@ -125,51 +154,53 @@
             <div class="modal-body">
                 <form>
                     <div class="row">
-                        <div class="row-cols-6">
+                        <div class="row-cols-10 p-3">
+                            <div class="form-group">
+                                <label for="txtUsername" class="col-form-label">Recipient:</label>
+                                <input type="text" class="form-control" id="txtUsername">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtPassword" class="col-form-label">Password:</label>
+                                <input type="text" class="form-control" id="txtPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtName" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="txtName">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtAddess" class="col-form-label">Addess:</label>
+                                <input type="text" class="form-control" id="txtAddess">
+                            </div>
+
                         </div>
-                        <div class="row-cols-6">
+                        <div class="row-cols-10 p-3">
 
+                            <div class="form-group">
+                                <label for="txtEmail" class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" id="txtEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtPhone" class="col-form-label">Phone:</label>
+                                <input type="text" class="form-control" id="txtPhone">
+                            </div>
+                            <div class="form-group">
+                                <label for="chexboxStatus" class="col-form-label">Status:</label>
+
+                                <input data-val="true"
+                                       data-val-required="The isActive field is required."
+                                       id="isActive"
+                                       name="isActive"
+                                       type="checkbox"
+                                       value="true" />
+
+                                <input name="isActive" type="hidden" value="false" />
+                            </div>
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="txtUsername" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="txtUsername">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPassword" class="col-form-label">Password:</label>
-                        <input type="text" class="form-control" id="txtPassword">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtName" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="txtName">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtAddess" class="col-form-label">Addess:</label>
-                        <input type="text" class="form-control" id="txtAddess">
-                    </div>
+                    
 
-                    <div class="form-group">
-                        <label for="txtEmail" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" id="txtEmail">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPhone" class="col-form-label">Phone:</label>
-                        <input type="text" class="form-control" id="txtPhone">
-                    </div>
-                    <div class="form-group">
-                        <label for="chexboxStatus" class="col-form-label">Status:</label>
-
-                        <input data-val="true"
-                               data-val-required="The isActive field is required."
-                               id="isActive"
-                               name="isActive"
-                               type="checkbox"
-                               value="true" />
-
-                        <input name="isActive" type="hidden" value="false" />
-                    </div>
-
+                   
 
                 </form>
             </div>

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using PagedList;
 using PagedList.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Model.Dao
 {
@@ -26,9 +27,14 @@ namespace Model.Dao
 
 
         //   phân trang
-        public IEnumerable<User> LisAllPaging(int page, int pageSize)
+        public IEnumerable<User> LisAllPaging(string searchString,int page, int pageSize)
         {
-            return db.Users.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
+            IQueryable<User> model = db.Users;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
+            }
+             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
 
         //   Update
