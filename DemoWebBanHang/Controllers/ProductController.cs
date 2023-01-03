@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Management;
 using System.Web.Mvc;
+using Model.Dao;
+using Model.EF;
 
 namespace DemoWebBanHang.Controllers
 {
@@ -11,19 +14,21 @@ namespace DemoWebBanHang.Controllers
         // GET: Product
         public ActionResult Index()
         {
+            
             return View();
         }
 
-        public ActionResult Shopping_Item()
+        [ChildActionOnly]
+        public PartialViewResult ProductCategory()
         {
-            return View();
-        }
-        public ActionResult Shopping_Cart()
-        {
-            return View();
+            var model = new ProductCategoryDao().ListAll();
+            return PartialView(model);
         }
 
-
-
+        public ActionResult Category(long cateId)   
+        { 
+            var category = new CategoryDao().ViewDetail(cateId);
+            return View(category);
+        }
     }
 }

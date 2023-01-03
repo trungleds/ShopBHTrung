@@ -13,6 +13,14 @@ namespace DemoWebBanHang
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "Product Category",
+                url: "san-pham/{metatitle}-{cateId}",
+                defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
+                new[] { "DemoWebBanHang.Controllers" }
+
+            );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
@@ -20,6 +28,8 @@ namespace DemoWebBanHang
                 new[] { "DemoWebBanHang.Controllers" }
 
             );
+
+
         }
     }
 }

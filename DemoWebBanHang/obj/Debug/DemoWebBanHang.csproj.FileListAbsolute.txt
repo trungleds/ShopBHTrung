@@ -84,6 +84,8 @@ C:\D\ThucTap\demoMVC\DemoWebBanHang\DemoWebBanHang\obj\Debug\DemoWebBanHang.dll
 C:\D\ThucTap\demoMVC\DemoWebBanHang\DemoWebBanHang\obj\Debug\DemoWebBanHang.pdb
 C:\D\ThucTap\demoMVC\DemoWebBanHang\DemoWebBanHang\bin\EntityFramework.SqlServer.dll
 C:\D\ThucTap\demoMVC\DemoWebBanHang\DemoWebBanHang\bin\EntityFramework.SqlServer.xml
+C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.csproj.AssemblyReference.cache
+C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.csproj.CoreCompileInputs.cache
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\DemoWebBanHang.dll.config
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\DemoWebBanHang.dll
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\DemoWebBanHang.pdb
@@ -169,8 +171,6 @@ C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\System.Web.WebPages.Razor.
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\Newtonsoft.Json.xml
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\Antlr3.Runtime.pdb
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.csproj.AssemblyReference.cache
-C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.csproj.CoreCompileInputs.cache
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.csproj.CopyComplete
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.dll
 C:\D\ThucTap\demoMVC\OnlineShopMVC\DemoWebBanHang\obj\Debug\DemoWebBanHang.pdb
