@@ -143,6 +143,7 @@
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Commom\CommomConstants.cs" />
     <Compile Include="Commom\Encryptor.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2181,10 +2182,15 @@
     <Content Include="assets\admin\plugins\uplot\uPlot.iife.js" />
     <Content Include="assets\admin\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="assets\admin\plugins\uplot\uPlot.min.css" />
+    <Content Include="assets\client\css\bootstrap-theme.css" />
+    <Content Include="assets\client\css\bootstrap-theme.min.css" />
+    <Content Include="assets\client\css\bootstrap.css" />
+    <Content Include="assets\client\css\bootstrap.min.css" />
     <Content Include="assets\client\css\easy-responsive-tabs.css" />
     <Content Include="assets\client\css\global.css" />
     <Content Include="assets\client\css\slider.css" />
     <Content Include="assets\client\css\style.css" />
+    <Content Include="assets\client\font\glyphicons-halflings-regular.svg" />
     <Content Include="assets\client\images\about_img.jpg" />
     <Content Include="assets\client\images\arrow-next.png" />
     <Content Include="assets\client\images\arrow-prev.png" />
@@ -2235,12 +2241,15 @@
     <Content Include="assets\client\images\twitter.png" />
     <Content Include="assets\client\images\value-rating.png" />
     <Content Include="assets\client\images\wishlist.png" />
+    <Content Include="assets\client\js\bootstrap.js" />
+    <Content Include="assets\client\js\bootstrap.min.js" />
     <Content Include="assets\client\js\easing.js" />
     <Content Include="assets\client\js\easyResponsiveTabs.js" />
     <Content Include="assets\client\js\jquery-1.7.2.min.js" />
     <Content Include="assets\client\js\jquery.accordion.js" />
     <Content Include="assets\client\js\jquery.easing.js" />
     <Content Include="assets\client\js\move-top.js" />
+    <Content Include="assets\client\js\npm.js" />
     <Content Include="assets\client\js\script.js" />
     <Content Include="assets\client\js\slides.min.jquery.js" />
     <Content Include="assets\client\js\startstop-slider.js" />
@@ -4678,6 +4687,14 @@
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="assets\client\font\Amble-Regular-webfont.ttf" />
     <Content Include="assets\client\images\Thumbs.db" />
+    <Content Include="assets\client\css\bootstrap-theme.css.map" />
+    <Content Include="assets\client\css\bootstrap-theme.min.css.map" />
+    <Content Include="assets\client\css\bootstrap.css.map" />
+    <Content Include="assets\client\css\bootstrap.min.css.map" />
+    <Content Include="assets\client\font\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\client\font\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\client\font\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\client\font\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\controllers\UserController.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -4703,8 +4720,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\Shopping_Cart.cshtml" />
-    <Content Include="Views\Product\Shopping_Item.cshtml" />
     <Content Include="Views\Prolifes\Index.cshtml" />
     <Content Include="Views\Prolifes\Prolife_Address.cshtml" />
     <Content Include="Views\Prolifes\Prolife_Oders.cshtml" />
@@ -4717,6 +4732,8 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\ProductCategory.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

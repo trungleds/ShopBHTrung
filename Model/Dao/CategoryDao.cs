@@ -14,12 +14,18 @@ namespace Model.Dao
             db = new OnLineShopDbContext();
             
         }
-        public List<Category> ListAll(long id)
+        public List<Category> ListAll()
         {
             return db.Categories.Where(x=>x.Status == true).ToList();   
         }
       
+        public ProductCategory ViewDetail(long id)
+        {
+            return db.ProductCategories.Find(id);
         }
 
     }
+
+
 }
+

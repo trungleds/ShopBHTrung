@@ -16,6 +16,7 @@ namespace Model.Dao
         }
         public List<Slide> ListAll()
         {
-            return db.Slides.Where(x=>x.Status == true ).OrderBy(y=>y.DisplayOder).ToList();        }
+            return db.Slides.Where(x=>x.Status == true ).OrderBy(y=>y.DisplayOder).ToList();      
+        }
     }
 }
