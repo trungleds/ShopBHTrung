@@ -16,11 +16,9 @@ namespace Model.Dao
         }
         public List<Category> ListAll(long id)
         {
-            return db.Categories.Where(x=>x.Status == true).ToList();
+            return db.Categories.Where(x=>x.Status == true).ToList();   
         }
-        public ProductCategory ViewDetail(long id)
-        {
-            return db.ProductCategories.Find(id);
+      
         }
 
     }

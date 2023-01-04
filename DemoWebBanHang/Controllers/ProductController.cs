@@ -27,8 +27,8 @@ namespace DemoWebBanHang.Controllers
 
         public ActionResult Category(long cateId)   
         { 
-            var category = new CategoryDao().ViewDetail(cateId);
-            return View(category);
+          
+            return View();
         }
     }
 }
